@@ -1,0 +1,113 @@
+/* Estilos del cuerpo y fondo decorado con corazones */
+body {
+    background-color: #ffeb3b; /* Fondo amarillo brillante */
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    padding: 50px;
+    background-image: url('https://i.imgur.com/jO5lfZK.png'); /* Imagen de corazones para el fondo */
+    background-repeat: repeat;
+    background-size: 50px 50px;
+    transition: background-image 1s ease-in-out;
+}
+
+/* Estilo del encabezado */
+h1 {
+    font-size: 48px;
+    color: #d32f2f;
+    margin-bottom: 50px;
+}
+
+/* Botón en forma de corazón amarillo */
+#heartButton {
+    width: 150px;
+    height: 150px;
+    background-color: #fdd835;
+    border: none;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+#heartButton::before,
+#heartButton::after {
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #fdd835;
+    border-radius: 50%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#heartButton::after {
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+#heartButton:hover {
+    background-color: #fbc02d;
+    transform: scale(1.1);
+}
+
+/* Sección de flores y mensaje que inicialmente está oculta */
+#flowersSection {
+    margin-top: 50px;
+    position: relative;
+    animation: fadeIn 2s forwards;
+}
+
+.hidden {
+    display: none;
+}
+
+.sunflowers {
+    width: 80%;
+    max-width: 800px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#message {
+    font-size: 24px;
+    color: #e64a19;
+    margin-top: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Animación de desvanecimiento */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    #heartButton {
+        width: 100px;
+        height: 100px;
+        font-size: 16px;
+    }
+
+    .sunflowers {
+        width: 100%;
+    }
+
+    #message {
+        font-size: 18px;
+    }
+}
